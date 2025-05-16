@@ -1,0 +1,760 @@
+[INFO] 2025-05-16 10:36:46 - ==============================================
+[INFO] 2025-05-16 10:36:46 - PWV数据分析工具 - 运行脚本
+[INFO] 2025-05-16 10:36:46 - 基于小米可穿戴设备进行动脉硬化筛查与脑卒中风险预测研究
+[INFO] 2025-05-16 10:36:46 - ==============================================
+[INFO] 2025-05-16 10:36:46 - 检测到虚拟环境venv
+[INFO] 2025-05-16 10:36:46 - 检测到pyenv，切换到Python 3.12.9...
+[SUCCESS] 2025-05-16 10:36:46 - 使用Python: Python 3.12.9
+[SUCCESS] 2025-05-16 10:36:46 - 使用Python: Python 3.12.9
+[INFO] 2025-05-16 10:36:46 - 激活虚拟环境...
+[SUCCESS] 2025-05-16 10:36:46 - 虚拟环境已激活
+[INFO] 2025-05-16 10:36:46 - 记录虚拟环境包信息...
+cloudpickle==3.1.1
+contourpy==1.3.2
+cycler==0.12.1
+et_xmlfile==2.0.0
+fonttools==4.58.0
+joblib==1.5.0
+kaleido==0.2.1
+kiwisolver==1.4.8
+llvmlite==0.44.0
+lxml==5.4.0
+Markdown==3.8
+matplotlib==3.10.3
+narwhals==1.39.0
+numba==0.61.2
+numpy==2.2.5
+nvidia-nccl-cu12==2.26.5
+openpyxl==3.1.5
+packaging==25.0
+pandas==2.2.3
+patsy==1.0.1
+pillow==11.2.1
+plotly==6.0.1
+# Editable Git install with no remote (pwv_analysis==2.0.0)
+-e /home/alfred/renminandxiaomi
+pyparsing==3.2.3
+python-dateutil==2.9.0.post0
+python-docx==1.1.2
+pytz==2025.2
+scikit-learn==1.6.1
+scipy==1.15.3
+seaborn==0.13.2
+shap==0.47.2
+six==1.17.0
+slicer==0.0.8
+statsmodels==0.14.4
+threadpoolctl==3.6.0
+tqdm==4.67.1
+typing_extensions==4.13.2
+tzdata==2025.2
+xgboost==3.0.1
+[INFO] 2025-05-16 10:36:46 - 分析脚本检查通过
+[INFO] 2025-05-16 10:36:46 - ==============================================
+[INFO] 2025-05-16 10:36:46 - 开始运行PWV数据分析流程...
+[INFO] 2025-05-16 10:36:46 - 注意: 这个过程可能需要几分钟时间，请耐心等待...
+[INFO] 2025-05-16 10:36:46 - ==============================================
+2025-05-16 10:36:47,760 - INFO - data_visualization - fix_chinese_font_display - 检测到WSL环境，将尝试使用Windows字体
+2025-05-16 10:36:47,760 - INFO - data_visualization - fix_chinese_font_display - 找到Windows字体目录: /mnt/c/Windows/Fonts
+2025-05-16 10:36:47,761 - INFO - data_visualization - fix_chinese_font_display - 找到Windows中文字体: /mnt/c/Windows/Fonts/simhei.ttf
+2025-05-16 10:36:47,765 - INFO - font_config - enhance_plot_style - 图表样式增强设置完成
+2025-05-16 10:36:47,809 - INFO - font_config - configure_chinese_fonts - 检测到WSL2环境
+2025-05-16 10:36:47,809 - INFO - font_config - configure_chinese_fonts - WSL2环境：尝试访问Windows字体目录
+2025-05-16 10:36:47,809 - INFO - font_config - configure_chinese_fonts - 找到Windows字体目录: /mnt/c/Windows/Fonts
+2025-05-16 10:36:47,809 - INFO - font_config - configure_chinese_fonts - 找到Windows中文字体: /mnt/c/Windows/Fonts/simhei.ttf
+2025-05-16 10:36:47,875 - INFO - font_config - configure_chinese_fonts - 成功使用WSL下的Windows字体: SimHei
+2025-05-16 10:36:47,876 - INFO - font_config - enhance_plot_style - 图表样式增强设置完成
+2025-05-16 10:36:47,876 - INFO - data_visualization - fix_chinese_font_display - 检测到WSL环境，将尝试使用Windows字体
+2025-05-16 10:36:47,876 - INFO - data_visualization - fix_chinese_font_display - 找到Windows字体目录: /mnt/c/Windows/Fonts
+2025-05-16 10:36:47,876 - INFO - data_visualization - fix_chinese_font_display - 找到Windows中文字体: /mnt/c/Windows/Fonts/simhei.ttf
+2025-05-16 10:36:47,890 - INFO - data_visualization - fix_chinese_font_display - 检测到WSL环境，将尝试使用Windows字体
+2025-05-16 10:36:47,890 - INFO - data_visualization - fix_chinese_font_display - 找到Windows字体目录: /mnt/c/Windows/Fonts
+2025-05-16 10:36:47,891 - INFO - data_visualization - fix_chinese_font_display - 找到Windows中文字体: /mnt/c/Windows/Fonts/simhei.ttf
+2025-05-16 10:36:47,891 - INFO - font_config - enhance_plot_style - 图表样式增强设置完成
+2025-05-16 10:36:48,001 - INFO - data_processing - load_and_prepare_data - ===== 开始加载和准备数据 =====
+2025-05-16 10:36:48,150 - INFO - data_processing - load_and_prepare_data - 原始数据加载成功: 222 行, 77 列
+2025-05-16 10:36:48,150 - INFO - data_processing - clean_data - 原始数据: 222 行, 77 列
+2025-05-16 10:36:48,151 - INFO - data_processing - clean_data - 列名已标准化
+2025-05-16 10:36:48,153 - INFO - data_processing - clean_data - 性别字段处理完成: 男性映射为1 (104), 女性映射为0 (118). Post-map NaNs: 0
+2025-05-16 10:36:48,159 - WARNING - data_processing - clean_data - 列 'creatinine_umol_l' 中有 2 个值低于临床范围最小值 20 umol/L
+2025-05-16 10:36:48,160 - WARNING - data_processing - clean_data - 列 'urea_mmol_l' (原名: 尿素（mmol/L）) 在转换为数值类型时引入了新的NaN值 (原类型: object).
+2025-05-16 10:36:48,160 - WARNING - data_processing - clean_data - 列 'urea_mmol_l' 中有 2 个值低于临床范围最小值 1 mmol/L
+2025-05-16 10:36:48,160 - WARNING - data_processing - clean_data - 列 'wbc_10_9' 中有 2 个值低于临床范围最小值 1 10^9/L
+2025-05-16 10:36:48,161 - WARNING - data_processing - clean_data - 列 'hb_g_l' 中有 6 个值低于临床范围最小值 50 g/L
+2025-05-16 10:36:48,161 - WARNING - data_processing - clean_data - 列 'ef_percent' 中有 37 个值低于临床范围最小值 10 %
+2025-05-16 10:36:48,162 - INFO - data_processing - clean_data - 开始处理缺失值。当前总缺失值数量: 4826
+2025-05-16 10:36:48,163 - INFO - data_processing - clean_data - 删除PWV值缺失的行: 1 行被删除。剩余 221 行
+2025-05-16 10:36:48,164 - INFO - data_processing - clean_data - 列 'cfpwv_speed' 中 15 个缺失值已用中位数 9.25 填充
+2025-05-16 10:36:48,164 - INFO - data_processing - clean_data - 列 'bapwv_right_speed' 中 8 个缺失值已用中位数 11.10 填充
+2025-05-16 10:36:48,164 - INFO - data_processing - clean_data - 列 'bapwv_left_speed' 中 9 个缺失值已用中位数 11.30 填充
+2025-05-16 10:36:48,165 - INFO - data_processing - clean_data - 列 'cfpwv_carotid_si' 中 90 个缺失值已用中位数 9.62 填充
+2025-05-16 10:36:48,165 - INFO - data_processing - clean_data - 列 'cfpwv_carotid_ri' 中 92 个缺失值已用中位数 0.42 填充
+2025-05-16 10:36:48,165 - INFO - data_processing - clean_data - 列 'creatinine_umol_l' 中 131 个缺失值已用中位数 68.50 填充
+2025-05-16 10:36:48,166 - INFO - data_processing - clean_data - 列 'urea_mmol_l' 中 132 个缺失值已用中位数 5.30 填充
+2025-05-16 10:36:48,166 - INFO - data_processing - clean_data - 列 'crp_mg_l' 中 131 个缺失值已用中位数 0.40 填充
+2025-05-16 10:36:48,166 - INFO - data_processing - clean_data - 列 'ef_percent' 中 131 个缺失值已用中位数 60.25 填充
+2025-05-16 10:36:48,167 - INFO - data_processing - clean_data - 列 'abi_right_pt_index' 中 13 个缺失值已用中位数 1.09 填充
+2025-05-16 10:36:48,167 - INFO - data_processing - clean_data - 列 'cfpwv_interval_ms' 中 16 个缺失值已用中位数 78.00 填充
+2025-05-16 10:36:48,167 - INFO - data_processing - clean_data - 列 'cfpwv_distance_cm' 中 16 个缺失值已用中位数 72.00 填充
+2025-05-16 10:36:48,167 - INFO - data_processing - clean_data - 列 'bapwv_right_distance_cm' 中 8 个缺失值已用中位数 110.00 填充
+2025-05-16 10:36:48,168 - INFO - data_processing - clean_data - 列 'bapwv_left_interval_ms' 中 10 个缺失值已用中位数 90.00 填充
+2025-05-16 10:36:48,168 - INFO - data_processing - clean_data - 列 'abi_right_brachial_index' 中 18 个缺失值已用中位数 1.00 填充
+2025-05-16 10:36:48,168 - INFO - data_processing - clean_data - 列 'bfv_carotid_mean_speed' 中 56 个缺失值已用中位数 13.10 填充
+2025-05-16 10:36:48,169 - INFO - data_processing - clean_data - 列 'bnp_pg_ml' 中 131 个缺失值已用中位数 26.50 填充
+2025-05-16 10:36:48,169 - INFO - data_processing - clean_data - 列 'wbc_10_9' 中 131 个缺失值已用中位数 5.60 填充
+2025-05-16 10:36:48,169 - INFO - data_processing - clean_data - 列 'hb_g_l' 中 131 个缺失值已用中位数 131.50 填充
+2025-05-16 10:36:48,169 - INFO - data_processing - clean_data - 额外处理PWV相关列 'cfPWV-颈动脉-DAIX ' (不在主要数值列列表中)
+2025-05-16 10:36:48,169 - INFO - data_processing - clean_data - PWV相关列 'cfPWV-颈动脉-DAIX ' 中 88 个缺失值已用中位数 0.57 填充
+2025-05-16 10:36:48,170 - INFO - data_processing - clean_data - 额外处理PWV相关列 'cfPWV-股动脉-SI ' (不在主要数值列列表中)
+2025-05-16 10:36:48,170 - INFO - data_processing - clean_data - PWV相关列 'cfPWV-股动脉-SI ' 中 45 个缺失值已用中位数 5.33 填充
+2025-05-16 10:36:48,170 - INFO - data_processing - clean_data - 额外处理PWV相关列 'cfPWV-股动脉-RI' (不在主要数值列列表中)
+2025-05-16 10:36:48,170 - INFO - data_processing - clean_data - PWV相关列 'cfPWV-股动脉-RI' 中 57 个缺失值已用中位数 0.02 填充
+2025-05-16 10:36:48,170 - INFO - data_processing - clean_data - 额外处理PWV相关列 'cfPWV-股动脉-DAIX ' (不在主要数值列列表中)
+2025-05-16 10:36:48,170 - INFO - data_processing - clean_data - PWV相关列 'cfPWV-股动脉-DAIX ' 中 45 个缺失值已用中位数 0.99 填充
+2025-05-16 10:36:48,170 - INFO - data_processing - clean_data - 额外处理PWV相关列 'baPWV-右侧-时间间隔ms' (不在主要数值列列表中)
+2025-05-16 10:36:48,171 - INFO - data_processing - clean_data - PWV相关列 'baPWV-右侧-时间间隔ms' 中 9 个缺失值已用中位数 92.00 填充
+2025-05-16 10:36:48,171 - INFO - data_processing - clean_data - 额外处理PWV相关列 'baPWV-左侧-距离cm' (不在主要数值列列表中)
+2025-05-16 10:36:48,171 - INFO - data_processing - clean_data - PWV相关列 'baPWV-左侧-距离cm' 中 8 个缺失值已用中位数 110.00 填充
+2025-05-16 10:36:48,172 - INFO - data_processing - clean_data - 缺失值处理完成：总缺失值 4826 -> 3257
+2025-05-16 10:36:48,172 - INFO - data_processing - clean_data - 标准化性别编码...
+2025-05-16 10:36:48,174 - INFO - data_processing - clean_data - 性别分布 (0=女, 1=男, NaN=未识别/缺失): 
+gender
+0    117
+1    104
+Name: count, dtype: int64
+2025-05-16 10:36:48,174 - INFO - data_processing - clean_data - 计算BMI...
+2025-05-16 10:36:48,175 - INFO - data_processing - clean_data - BMI计算完成，平均BMI: 24.84 (初步)
+2025-05-16 10:36:48,175 - INFO - data_processing - clean_data - 列 'sbp': 1 个值被识别为特定范围异常值 (<80 or >200)，将设为NaN。
+2025-05-16 10:36:48,175 - INFO - data_processing - clean_data - 列 'sbp' 中的 1 个NaN值 (含转换的异常值) 已用中位数 128.00 填充。
+2025-05-16 10:36:48,176 - INFO - data_processing - clean_data - 已创建脉压差列. 平均值: 50.96
+2025-05-16 10:36:48,176 - INFO - data_processing - clean_data - PWV range check details (from CLINICAL_RANGES) are available in the summary.
+2025-05-16 10:36:48,178 - INFO - data_processing - clean_data - 已删除 1 个全为NaN的列: ['其他']
+2025-05-16 10:36:48,178 - INFO - data_processing - clean_data - 数据清洗完成: 221 行 -> 221 行 (100.0% 保留)
+2025-05-16 10:36:48,179 - INFO - data_processing - clean_data - 数据清洗摘要已保存到: /home/alfred/renminandxiaomi/output/tables/data_cleaning_summary_20250516_103648.json
+2025-05-16 10:36:48,179 - INFO - data_processing - load_and_prepare_data - 
+# 数据清洗报告
+
+- 原始数据行数: 222
+
+- 清洗后数据行数: 221
+
+
+## 列处理详情:
+
+| 列名 (原始) | 列名 (标准化) | 类型转换 | NaN处理 (前) | NaN处理 (后) | NaN填充方法 | 范围检查 | IQR异常值 |
+
+|---|---|---|---|---|---|---|---|
+
+| 提交时间 | 提交时间 | 成功 | 0 | N/A | 无 | 未检查 | 未应用 |
+
+| 填写ID | 填写ID | 成功 | 0 | N/A | 无 | 未检查 | 未应用 |
+
+| 答题时间 | 答题时间 | 成功 | 0 | N/A | 无 | 未检查 | 未应用 |
+
+| 昵称 | 昵称 | 成功 | 0 | N/A | 无 | 未检查 | 未应用 |
+
+| 受试者-编号 | 受试者-编号 | 成功 | 0 | N/A | 无 | 未检查 | 未应用 |
+
+| 受试者-性别 | gender | 成功 | 0 | N/A | 无 | 无 | 未应用 |
+
+| 基础信息-身高 | height | 成功 | 0 | N/A | 无 | 0 低 / 0 高 (范围: 50-250) | 未应用 |
+
+| 基础信息-体重 | weight | 成功 | 0 | N/A | 无 | 0 低 / 0 高 (范围: 10-300) | 未应用 |
+
+| 基础信息-年龄 | age | 成功 | 0 | N/A | 无 | 0 低 / 0 高 (范围: 1-110) | 未应用 |
+
+| 收缩压 | sbp | 成功 | 0 | N/A | 无 | 0 低 / 0 高 (范围: 60-300) | 未应用 |
+
+| 舒张压 | dbp | 成功 | 0 | N/A | 无 | 0 低 / 0 高 (范围: 30-200) | 未应用 |
+
+| 其他信息（相关既往病史，没有可直接跳过） | 其他信息（相关既往病史，没有可直接跳过） | 成功 | 139 | N/A | 无 | 未检查 | 未应用 |
+
+| 备注信息 | 备注信息 | 成功 | 113 | N/A | 无 | 未检查 | 未应用 |
+
+| 入组受试者的诊断状态 | 入组受试者的诊断状态 | 成功 | 217 | N/A | 无 | 未检查 | 未应用 |
+
+| 手表佩戴手 | 手表佩戴手 | 成功 | 10 | N/A | 无 | 未检查 | 未应用 |
+
+| 竞品信息-脉搏波传导速度 | pwv | 成功 | 1 | N/A | 无 | 0 低 / 0 高 (范围: 3-25) | 未应用 |
+
+| 竞品信息-心率变异性 | hrv_index | 成功 | 1 | N/A | 无 | 0 低 / 0 高 (范围: 0-200) | 未应用 |
+
+| 竞品信息-动脉弹性评级 | 竞品信息-动脉弹性评级 | 成功 | 2 | N/A | 无 | 未检查 | 未应用 |
+
+| 小米-手表采集记录 | 小米-手表采集记录 | 成功 | 0 | N/A | 无 | 未检查 | 未应用 |
+
+| cfPWV-颈动脉-SI  | cfpwv_carotid_si | 成功 | 91 | N/A | 无 | 未检查 | 未应用 |
+
+| cfPWV-颈动脉-RI  | cfpwv_carotid_ri | 成功 | 93 | N/A | 无 | 未检查 | 未应用 |
+
+| cfPWV-颈动脉-DAIX  | cfPWV-颈动脉-DAIX  | 成功 | 89 | N/A | 无 | 未检查 | 未应用 |
+
+| cfPWV-速度m/s | cfpwv_speed | 成功 | 16 | N/A | 无 | 未检查 | 未应用 |
+
+| cfPWV-时间间隔ms | cfpwv_interval_ms | 成功 | 17 | N/A | 无 | 未检查 | 未应用 |
+
+| cfPWV-距离cm | cfpwv_distance_cm | 成功 | 17 | N/A | 无 | 未检查 | 未应用 |
+
+| cfPWV-股动脉-SI  | cfPWV-股动脉-SI  | 成功 | 46 | N/A | 无 | 未检查 | 未应用 |
+
+| cfPWV-股动脉-RI | cfPWV-股动脉-RI | 成功 | 58 | N/A | 无 | 未检查 | 未应用 |
+
+| cfPWV-股动脉-DAIX  | cfPWV-股动脉-DAIX  | 成功 | 46 | N/A | 无 | 未检查 | 未应用 |
+
+| baPWV-右侧-距离cm | bapwv_right_distance_cm | 成功 | 9 | N/A | 无 | 未检查 | 未应用 |
+
+| baPWV-右侧-时间间隔ms | baPWV-右侧-时间间隔ms | 成功 | 10 | N/A | 无 | 未检查 | 未应用 |
+
+| baPWV-右侧-速度m/s | bapwv_right_speed | 成功 | 9 | N/A | 无 | 未检查 | 未应用 |
+
+| baPWV-左侧-距离cm | baPWV-左侧-距离cm | 成功 | 9 | N/A | 无 | 未检查 | 未应用 |
+
+| baPWV-左侧-时间间隔ms | bapwv_left_interval_ms | 成功 | 11 | N/A | 无 | 未检查 | 未应用 |
+
+| baPWV-左侧-速度m/s | bapwv_left_speed | 成功 | 10 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-右侧-肱血压 | ABI-右侧-肱血压 | 成功 | 18 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-右侧-肱指数 | abi_right_brachial_index | 成功 | 18 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-右侧-足背血压 | ABI-右侧-足背血压 | 成功 | 17 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-右侧-足背指数 | ABI-右侧-足背指数 | 成功 | 17 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-右侧-胫后血压 | ABI-右侧-胫后血压 | 成功 | 13 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-右侧-胫后指数 | abi_right_pt_index | 成功 | 13 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-左侧-肱血压 | ABI-左侧-肱血压 | 成功 | 11 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-左侧-肱指数 | ABI-左侧-肱指数 | 成功 | 12 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-左侧-足背血压 | ABI-左侧-足背血压 | 成功 | 17 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-左侧-足背指数 | ABI-左侧-足背指数 | 成功 | 17 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-左侧-胫后血压 | ABI-左侧-胫后血压 | 成功 | 12 | N/A | 无 | 未检查 | 未应用 |
+
+| ABI-左侧-胫后指数 | ABI-左侧-胫后指数 | 成功 | 12 | N/A | 无 | 未检查 | 未应用 |
+
+| 血流速度-颈部-最高速度m/s | 血流速度-颈部-最高速度m/s | 成功 | 55 | N/A | 无 | 未检查 | 未应用 |
+
+| 血流速度-颈部-最低速度m/s | 血流速度-颈部-最低速度m/s | 成功 | 56 | N/A | 无 | 未检查 | 未应用 |
+
+| 血流速度-颈部-平均速度m/s | bfv_carotid_mean_speed | 成功 | 57 | N/A | 无 | 未检查 | 未应用 |
+
+| 血流速度-腕部-最高速度m/s | 血流速度-腕部-最高速度m/s | 成功 | 25 | N/A | 无 | 未检查 | 未应用 |
+
+| 血流速度-腕部-最低速度m/s | 血流速度-腕部-最低速度m/s | 成功 | 25 | N/A | 无 | 未检查 | 未应用 |
+
+| 血流速度-腕部-平均速度m/s | 血流速度-腕部-平均速度m/s | 成功 | 25 | N/A | 无 | 未检查 | 未应用 |
+
+| 住院号 | 住院号 | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| 性别 | 性别 | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| 既往病史 | 既往病史 | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| 药物治疗 | 药物治疗 | 成功 | 133 | N/A | 无 | 未检查 | 未应用 |
+
+| 血管相关疾病 | 血管相关疾病 | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| CRP（mg/L） | crp_mg_l | 成功 | 132 | N/A | 无 | 0 低 / 0 高 (范围: 0-300) | 未应用 |
+
+| PCT（ng/ml） | PCT（ng/ml） | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| TnI（pg/ml） | TnI（pg/ml） | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| CK-MB（ng/ml） | CK-MB（ng/ml） | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| 肌红蛋白（ng/ml） | 肌红蛋白（ng/ml） | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| BNP（pg/ml） | bnp_pg_ml | 成功 | 132 | N/A | 无 | 0 低 / 0 高 (范围: 0-5000) | 未应用 |
+
+| 肌酐（umol/L） | creatinine_umol_l | 成功 | 132 | N/A | 无 | 2 低 / 0 高 (范围: 20-1000) | 未应用 |
+
+| 尿素（mmol/L） | urea_mmol_l | 成功 | 132 | N/A | 无 | 2 低 / 0 高 (范围: 1-50) | 未应用 |
+
+| WBC(10^9) | wbc_10_9 | 成功 | 132 | N/A | 无 | 2 低 / 0 高 (范围: 1-50) | 未应用 |
+
+| RBC(10^9) | RBC(10^9) | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| Hb（g/L） | hb_g_l | 成功 | 132 | N/A | 无 | 6 低 / 0 高 (范围: 50-250) | 未应用 |
+
+| PLT(10^9) | PLT(10^9) | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| PT | PT | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| APTT | APTT | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| D-dimer | D-dimer | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| 射血分数（%） | ef_percent | 成功 | 132 | N/A | 无 | 37 低 / 0 高 (范围: 10-90) | 未应用 |
+
+| 颈动脉超声 | 颈动脉超声 | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| 肾动脉超声 | 肾动脉超声 | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| 下肢血管超声 | 下肢血管超声 | 成功 | 132 | N/A | 无 | 未检查 | 未应用 |
+
+| 其他 | 其他 | 成功 | 222 | N/A | 无 | 未检查 | 未应用 |
+
+
+## 性别字段处理:
+
+- '男' (或变体) 映射为 1: 104次
+
+- '女' (或变体) 映射为 0: 118次
+
+- 性别字段映射前NaN数量: 0
+
+- 性别字段映射后NaN数量: 0
+
+
+--- End of Report ---
+
+2025-05-16 10:36:48,187 - INFO - data_processing - load_and_prepare_data - 数据准备完成。最终数据: 221 行, 91 列
+2025-05-16 10:36:48,187 - INFO - data_processing - load_and_prepare_data - ===== 数据加载和准备结束 =====
+🚀 PWV数据分析流程启动于: 2025-05-16 10:36:48
+============================================================
+ℹ️ 当前工作目录: /home/alfred/renminandxiaomi
+ℹ️ 项目根目录: /home/alfred/renminandxiaomi
+
+创建输出目录...
+✅ 主要输出目录已在 'output' 下创建/确认。
+
+-------------------- 步骤1: 数据加载与预处理 --------------------
+找到最新数据文件: docs/excel/pwv数据采集表 -去公式.xlsx
+正在加载数据文件: docs/excel/pwv数据采集表 -去公式.xlsx
+成功加载数据: 222 行, 77 列
+
+开始创建派生特征...
+已创建年龄段特征
+已创建血压分类特征，分布: 
+bp_category
+正常血压     55
+1级高血压    54
+正常高值     50
+高值血压     47
+2级高血压     8
+低血压       4
+3级高血压     3
+Name: count, dtype: int64
+已创建PWV分类特征，分布: 
+pwv_category
+偏高    98
+边缘    82
+正常    41
+Name: count, dtype: int64
+已创建总风险得分，平均值: 1.77
+已创建风险等级特征
+已添加cfPWV标记列
+已添加baPWV标记列
+创建 ABI 风险分类 (基于 abi_right_pt_index)...
+ABI风险分类分布: 
+abi_risk_category
+重度PAD       1
+中度PAD       1
+轻度PAD       8
+正常/临界     199
+血管不可压缩     12
+Name: count, dtype: int64
+派生特征创建完成，现有特征总数: 91
+✅ 数据加载和预处理完成。
+  加载数据形状: (221, 91)
+
+-------------------- 步骤2: 基础数据分析 --------------------
+
+======== 开始PWV数据分析 ========
+
+计算基本统计指标...
+基本统计指标计算完成
+
+分析性别差异...
+性别差异分析完成
+
+分析年龄组差异...
+注意: 未找到'年龄组'列，尝试创建...
+年龄组分析完成
+
+计算变量相关性...
+相关性分析完成
+
+执行PWV回归分析...
+PWV回归分析完成 (线性模型):
+PWV回归分析完成
+
+检测异常值...
+异常值检测完成
+
+分析成对测量数据...
+成对测量数据分析完成
+
+分析ABI风险组差异...
+ABI风险组分析完成。
+
+分析分类变量间的关联性 (卡方检验)...
+
+  检验: 性别与血压分级 (gender vs bp_category)
+  列联表:
+bp_category  1级高血压  2级高血压  3级高血压  低血压  正常血压  正常高值  高值血压
+gender                                                 
+0               29      5      2    3    32    21    25
+1               25      3      1    1    23    29    22
+    警告: 42.9% 的单元格期望频数 < 5。卡方检验结果可能不可靠。
+    卡方统计量: 4.3241, P值: 0.6329, 自由度: 6
+    关联性是否显著 (P < 0.05): 否
+
+  检验: 性别与PWV分级 (gender vs pwv_category)
+  列联表:
+pwv_category  偏高  正常  边缘
+gender                  
+0             48  31  38
+1             50  10  44
+    卡方统计量: 10.5076, P值: 0.0052, 自由度: 2
+    关联性是否显著 (P < 0.05): 是
+
+  检验: 性别与ABI风险分级 (gender vs abi_risk_category)
+  列联表:
+abi_risk_category  正常/临界  轻度PAD  中度PAD  重度PAD  血管不可压缩
+gender                                               
+0                    107      5      0      0       5
+1                     92      3      1      1       7
+    警告: 60.0% 的单元格期望频数 < 5。卡方检验结果可能不可靠。
+    卡方统计量: 3.2104, P值: 0.5233, 自由度: 4
+    关联性是否显著 (P < 0.05): 否
+
+  检验: 血压分级与PWV分级 (bp_category vs pwv_category)
+  列联表:
+pwv_category  偏高  正常  边缘
+bp_category             
+1级高血压         31  10  13
+2级高血压          4   0   4
+3级高血压          3   0   0
+低血压            0   1   3
+正常血压          12  16  27
+正常高值          26   8  16
+高值血压          22   6  19
+    警告: 42.9% 的单元格期望频数 < 5。卡方检验结果可能不可靠。
+    卡方统计量: 27.5823, P值: 0.0064, 自由度: 12
+    关联性是否显著 (P < 0.05): 是
+
+  检验: 血压分级与ABI风险分级 (bp_category vs abi_risk_category)
+  列联表:
+abi_risk_category  正常/临界  轻度PAD  中度PAD  重度PAD  血管不可压缩
+bp_category                                          
+1级高血压                 48      2      0      1       3
+2级高血压                  8      0      0      0       0
+3级高血压                  3      0      0      0       0
+低血压                    4      0      0      0       0
+正常血压                  51      0      1      0       3
+正常高值                  41      5      0      0       4
+高值血压                  44      1      0      0       2
+    警告: 85.7% 的单元格期望频数 < 5。卡方检验结果可能不可靠。
+    卡方统计量: 16.7442, P值: 0.8594, 自由度: 24
+    关联性是否显著 (P < 0.05): 否
+
+  检验: PWV分级与ABI风险分级 (pwv_category vs abi_risk_category)
+  列联表:
+abi_risk_category  正常/临界  轻度PAD  中度PAD  重度PAD  血管不可压缩
+pwv_category                                         
+偏高                    86      5      0      1       6
+正常                    40      0      0      0       1
+边缘                    73      3      1      0       5
+    警告: 73.3% 的单元格期望频数 < 5。卡方检验结果可能不可靠。
+    卡方统计量: 6.1825, P值: 0.6268, 自由度: 8
+    关联性是否显著 (P < 0.05): 否
+
+  检验: 年龄组与血压分级 (age_group vs bp_category)
+  列联表:
+bp_category  1级高血压  2级高血压  3级高血压  低血压  正常血压  正常高值  高值血压
+age_group                                              
+青少年              0      0      0    0     0     1     0
+青年               3      0      1    3    15     9     5
+中年              10      2      0    0    20    11    10
+老年              34      4      2    1    17    23    25
+高龄               7      2      0    0     3     6     7
+    警告: 54.3% 的单元格期望频数 < 5。卡方检验结果可能不可靠。
+    卡方统计量: 40.0322, P值: 0.0212, 自由度: 24
+    关联性是否显著 (P < 0.05): 是
+
+  检验: 年龄组与PWV分级 (age_group vs pwv_category)
+  列联表:
+pwv_category  偏高  正常  边缘
+age_group               
+青少年            1   0   0
+青年             9   9  18
+中年             7  21  25
+老年            62  10  34
+高龄            19   1   5
+    警告: 26.7% 的单元格期望频数 < 5。卡方检验结果可能不可靠。
+    卡方统计量: 53.1621, P值: 0.0000, 自由度: 8
+    关联性是否显著 (P < 0.05): 是
+
+  检验: 年龄组与ABI风险分级 (age_group vs abi_risk_category)
+  列联表:
+abi_risk_category  正常/临界  轻度PAD  中度PAD  重度PAD  血管不可压缩
+age_group                                            
+青少年                    1      0      0      0       0
+青年                    33      0      0      0       3
+中年                    52      1      0      0       0
+老年                    90      7      1      1       7
+高龄                    23      0      0      0       2
+    警告: 80.0% 的单元格期望频数 < 5。卡方检验结果可能不可靠。
+    卡方统计量: 12.2515, P值: 0.7265, 自由度: 16
+    关联性是否显著 (P < 0.05): 否
+
+  检验: 综合风险等级与血压分级 (risk_level vs bp_category)
+  列联表:
+bp_category  1级高血压  2级高血压  3级高血压  低血压  正常血压  正常高值  高值血压
+risk_level                                             
+低风险              1      0      0    2    22     4     9
+中低风险             6      0      0    2    20    15    14
+中高风险            17      3      1    0    10    16    15
+高风险             30      5      2    0     3    15     9
+    警告: 42.9% 的单元格期望频数 < 5。卡方检验结果可能不可靠。
+    卡方统计量: 77.3353, P值: 0.0000, 自由度: 18
+    关联性是否显著 (P < 0.05): 是
+
+  检验: 综合风险等级与PWV分级 (risk_level vs pwv_category)
+  列联表:
+pwv_category  偏高  正常  边缘
+risk_level              
+低风险            0  21  17
+中低风险           6  12  39
+中高风险          33   6  23
+高风险           59   2   32025-05-16 10:37:00,369 - INFO - category - update - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-05-16 10:37:00,372 - INFO - category - update - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+
+    卡方统计量: 138.1186, P值: 0.0000, 自由度: 6
+    关联性是否显著 (P < 0.05): 是
+
+分类变量关联性分析完成。
+
+======== PWV数据分析完成 ========
+✅ 基础数据分析完成。
+
+保存分析结果到 output/tables/PWV_Core_Analysis_Results.xlsx...
+  已保存 'basic_stats' 到工作表 'basic_stats'
+  已保存 'gender_comparison' 到工作表 'gender_comparison'
+  已保存 'age_group_stats' 到工作表 'age_group_stats'
+  已保存 'age_group_tests_summary' 到工作表 'age_group_tests_summary'
+  已保存 'correlation_analysis' 到工作表 'correlation_analysis'
+  已保存 'pwv_regression' 到工作表 'pwv_regression'
+  已保存 'pwv_model_stats' 到工作表 'pwv_model_stats'
+  已保存 'paired_measurements' 到工作表 'paired_measurements'
+  已保存 'paired_analysis' 到工作表 'paired_analysis'
+  已保存 'abi_risk_group_stats' 到工作表 'abi_risk_group_stats'
+  已保存 'abi_risk_group_anova' 到工作表 'abi_risk_group_anova'
+  已保存 'categorical_associations' 到工作表 'categorical_associations'
+✅ 分析结果已保存到: output/tables/PWV_Core_Analysis_Results.xlsx
+  核心分析结果已保存到: output/tables/PWV_Core_Analysis_Results.xlsx
+
+-------------------- 步骤3: 高级数据分析 --------------------
+
+开始执行高级分析...
+
+BMI分类统计:
+bmi分类
+偏瘦     7
+正常    88
+超重    89
+肥胖    37
+Name: count, dtype: int64
+
+BMI分类百分比:
+bmi分类
+偏瘦     3.167421
+正常    39.819005
+超重    40.271493
+肥胖    16.742081
+Name: proportion, dtype: float64
+错误: 数据中缺少血压列
+
+按 bmi分类 进行子群体分析...
+❌ 高级数据分析过程中发生错误: "Columns not found: '舒张压', '收缩压'"。部分后续步骤可能受影响。
+
+-------------------- 步骤4: 临床风险分析 --------------------
+
+开始执行临床分析...
+
+执行PWV风险分类...
+
+PWV风险分类统计:
+PWV风险
+正常      213
+边缘        6
+显著风险      2
+Name: count, dtype: int64
+
+PWV风险分类百分比:
+PWV风险
+正常      96.380090
+边缘       2.714932
+显著风险     0.904977
+Name: proportion, dtype: float64
+
+计算综合风险评分...
+错误: 数据中缺少 收缩压 列
+❌ 临床风险分析过程中发生错误: '综合风险评分'。部分后续步骤可能受影响。
+
+-------------------- 步骤5: 基础数据可视化 --------------------
+
+======== 开始生成数据可视化 ========
+✅ 输出目录已创建/确认
+
+绘制分布直方图...
+- 已保存 pwv 分布图: output/figures/distribution/distribution_pwv.png
+- 已保存 age 分布图: output/figures/distribution/distribution_age.png
+- 已保存 sbp 分布图: output/figures/distribution/distribution_sbp.png
+- 已保存 dbp 分布图: output/figures/distribution/distribution_dbp.png
+- 已保存 bmi 分布图: output/figures/distribution/distribution_bmi.png
+- 已保存 height 分布图: output/figures/distribution/distribution_height.png
+- 已保存 weight 分布图: output/figures/distribution/distribution_weight.png
+- 已保存 cfpwv_speed 分布图: output/figures/distribution/distribution_cfpwv_speed.png
+- 已保存 bapwv_right_speed 分布图: output/figures/distribution/distribution_bapwv_right_speed.png
+- 已保存 bapwv_left_speed 分布图: output/figures/distribution/distribution_bapwv_left_speed.png
+- 已保存 cfpwv_carotid_si 分布图: output/figures/distribution/distribution_cfpwv_carotid_si.png
+- 已保存 cfpwv_carotid_ri 分布图: output/figures/distribution/distribution_cfpwv_carotid_ri.png
+- 已保存 hrv_index 分布图: output/figures/distribution/distribution_hrv_index.png
+- 已保存 creatinine_umol_l 分布图: output/figures/distribution/distribution_creatinine_umol_l.png
+- 已保存 urea_mmol_l 分布图: output/figures/distribution/distribution_urea_mmol_l.png
+- 已保存 crp_mg_l 分布图: output/figures/distribution/distribution_crp_mg_l.png
+- 已保存 ef_percent 分布图: output/figures/distribution/distribution_ef_percent.png
+- 已保存 abi_right_pt_index 分布图: output/figures/distribution/distribution_abi_right_pt_index.png
+- 已保存 cfpwv_interval_ms 分布图: output/figures/distribution/distribution_cfpwv_interval_ms.png
+- 已保存 cfpwv_distance_cm 分布图: output/figures/distribution/distribution_cfpwv_distance_cm.png
+- 已保存 bapwv_right_distance_cm 分布图: output/figures/distribution/distribution_bapwv_right_distance_cm.png
+- 已保存 bapwv_left_interval_ms 分布图: output/figures/distribution/distribution_bapwv_left_interval_ms.png
+- 已保存 abi_right_brachial_index 分布图: output/figures/distribution/distribution_abi_right_brachial_index.png
+- 已保存 bfv_carotid_mean_speed 分布图: output/figures/distribution/distribution_bfv_carotid_mean_speed.png
+- 已保存 bnp_pg_ml 分布图: output/figures/distribution/distribution_bnp_pg_ml.png
+- 已保存 wbc_10_9 分布图: output/figures/distribution/distribution_wbc_10_9.png
+- 已保存 hb_g_l 分布图: output/figures/distribution/distribution_hb_g_l.png
+
+绘制箱线图...
+  已保存: overall_boxplot.png
+  已保存: pwv_by_gender_boxplot.png
+  已保存: pwv_by_年龄组_boxplot.png
+  已保存: pwv_by_bmi分类_boxplot.png
+
+绘制相关性热力图...
+  已保存: correlation_heatmap.png
+  已保存: correlation_clustermap.png
+
+绘制性别差异图...
+  已保存: pwv_gender_comparison.png
+  已保存: age_gender_comparison.png
+  已保存: sbp_gender_comparison.png
+  已保存: dbp_gender_comparison.png
+  已保存: bmi_gender_comparison.png
+  已保存: height_gender_comparison.png
+  已保存: weight_gender_comparison.png
+  已保存: cfpwv_speed_gender_comparison.png
+  已保存: bapwv_right_speed_gender_comparison.png
+  已保存: bapwv_left_speed_gender_comparison.png
+  已保存: cfpwv_carotid_si_gender_comparison.png
+  已保存: cfpwv_carotid_ri_gender_comparison.png
+  已保存: hrv_index_gender_comparison.png
+  已保存: creatinine_umol_l_gender_comparison.png
+  已保存: urea_mmol_l_gender_comparison.png
+  已保存: crp_mg_l_gender_comparison.png
+  已保存: ef_percent_gender_comparison.png
+  已保存: abi_right_pt_index_gender_comparison.png
+  已保存: cfpwv_interval_ms_gender_comparison.png
+  已保存: cfpwv_distance_cm_gender_comparison.png
+  已保存: bapwv_right_distance_cm_gender_comparison.png
+  已保存: bapwv_left_interval_ms_gender_comparison.png
+  已保存: abi_right_brachial_index_gender_comparison.png
+  已保存: bfv_carotid_mean_speed_gender_comparison.png
+  已保存: bnp_pg_ml_gender_comparison.png
+  已保存: wbc_10_9_gender_comparison.png
+  已保存: hb_g_l_gender_comparison.png
+
+绘制年龄组分析图...
+  已保存: pwv_by_age_group_boxplot.png
+  已保存: pwv_by_age_group_trend.png
+  已保存: age_group_distribution.png
+
+绘制PWV回归分析图...
+  已保存: pwv_age_regression.png
+  已保存: pwv_sbp_regression.png
+  已保存: pwv_dbp_regression.png
+  已保存: pwv_bmi_regression.png
+  已保存: pwv_hrv_index_regression.png
+  已保存: pwv_crp_mg_l_regression.png
+  已保存: pwv_bnp_pg_ml_regression.png
+  已保存: pwv_wbc_10_9_regression.png
+  已保存: pwv_hb_g_l_regression.png
+  已保存: pwv_ef_percent_regression.png
+  已保存: pwv_creatinine_umol_l_regression.png
+  已保存: pwv_abi_right_brachial_index_regression.png
+  已保存: pwv_cfpwv_carotid_si_regression.png
+  已保存: pwv_cfpwv_carotid_ri_regression.png
+  已保存: pwv_bfv_carotid_mean_speed_regression.png
+  已保存: pwv_age_gender_regression.png
+
+======== 数据可视化完成，共生成 79 个图表 ========
+图表已按类型保存在 output/figures 各子目录中
+✅ 基础数据可视化完成，共生成 79 个图表。
+  图表保存在: output/image
+
+-------------------- 步骤6: 增强数据可视化 --------------------
+
+开始创建增强可视化图表...
+
+创建高级热力图: pwv by age & bmi
+
+创建风险评估可视化...
+警告: 缺少风险列: 综合风险等级, CVD风险等级, 10年CVD风险(%)
+
+创建子群体可视化...
+
+共创建了 12 个增强可视化图表，保存在 output/image 目录中
+✅ 增强数据可视化完成，共生成 12 个图表。
+  图表保存在: output/imageTraceback (most recent call last):
+  File "/home/alfred/renminandxiaomi/scripts/run_pwv_analysis.py", line 256, in main_orchestrator
+    generated_report_paths = generate_all_reports(
+                             ^^^^^^^^^^^^^^^^^^^^^
+TypeError: generate_all_reports() got an unexpected keyword argument 'figures'
+
+
+-------------------- 步骤7: 风险预测分析 --------------------
+
+==== 开始风险预测: PWV超标风险 ====
+
+准备特征和目标变量 (目标: cfpwv_速度)...
+错误: 目标列 'cfpwv_速度' 不在数据中
+特征/目标准备失败 for PWV超标风险
+⚠️ 风险预测分析未返回结果或返回空结果。
+
+-------------------- 步骤8: 生成分析报告 --------------------
+尝试生成PWV数据分析综合报告...
+❌ 报告生成过程中发生错误: generate_all_reports() got an unexpected keyword argument 'figures'
+尽管报告生成出现错误，流程将继续尝试完成...
+
+============================================================
+🎉 PWV数据分析流程全部完成! (总耗时: 24.33秒)
+------------------------- 查看产出 -------------------------
+- Excel表格 (核心分析): output/tables/PWV_Core_Analysis_Results.xlsx
+- Excel表格 (高级分析): output/tables/PWV_Advanced_Analysis_Results.xlsx
+- Excel表格 (临床分析): output/tables/PWV_Clinical_Analysis_Results.xlsx
+- Excel表格 (风险预测): output/tables/PWV_Risk_Predictions.xlsx
+- Excel表格 (从报告提取): output/tables/PWV数据分析表格汇总.xlsx
+- Markdown报告: output/reports/PWV数据分析综合报告.md
+- Word报告: output/reports/PWV数据分析综合报告.docx
+- HTML报告: output/reports/PWV数据分析综合报告.html
+- 图表目录: output/image (共 91 张图表)
+============================================================
+
+流程成功结束。
+[SUCCESS] 2025-05-16 10:37:12 - ==============================================
+[SUCCESS] 2025-05-16 10:37:12 - PWV数据分析流程已完成！
+[SUCCESS] 2025-05-16 10:37:12 - ==============================================
+[INFO] 2025-05-16 10:37:12 - 生成的报告及结果位于:
+[INFO] 2025-05-16 10:37:12 - - Markdown报告: output/reports/PWV数据分析综合报告.md
+[INFO] 2025-05-16 10:37:12 - - Word报告: output/reports/PWV数据分析综合报告.docx
+[INFO] 2025-05-16 10:37:12 - - HTML报告: output/reports/PWV数据分析综合报告.html
+[INFO] 2025-05-16 10:37:12 - - Excel数据表: output/tables/
+[INFO] 2025-05-16 10:37:12 - - 图表: output/figures/ 和 output/image/
+[INFO] 2025-05-16 10:37:12 - ==============================================

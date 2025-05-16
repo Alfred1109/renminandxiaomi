@@ -1,0 +1,2 @@
+[console_scripts]
+run-pwv-analysis = scripts.run_pwv_analysis:main_orchestrator

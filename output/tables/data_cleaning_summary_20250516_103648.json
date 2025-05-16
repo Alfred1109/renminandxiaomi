@@ -1,0 +1,931 @@
+{
+    "initial_rows": 222,
+    "column_processing": {
+        "提交时间": {
+            "original_name": "提交时间",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "0",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "填写ID": {
+            "original_name": "填写ID",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "0",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "答题时间": {
+            "original_name": "答题时间",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "0",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "昵称": {
+            "original_name": "昵称",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "0",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "受试者-编号": {
+            "original_name": "受试者-编号",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "0",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "gender": {
+            "original_name": "受试者-性别",
+            "type_conversion_successful": true,
+            "nan_count_before": "0"
+        },
+        "height": {
+            "original_name": "基础信息-身高",
+            "type_conversion_successful": true,
+            "nan_count_before": "0",
+            "range_check": {
+                "min_val": 50,
+                "max_val": 250,
+                "unit": "cm",
+                "outside_min": "0",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "weight": {
+            "original_name": "基础信息-体重",
+            "type_conversion_successful": true,
+            "nan_count_before": "0",
+            "range_check": {
+                "min_val": 10,
+                "max_val": 300,
+                "unit": "kg",
+                "outside_min": "0",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "age": {
+            "original_name": "基础信息-年龄",
+            "type_conversion_successful": true,
+            "nan_count_before": "0",
+            "range_check": {
+                "min_val": 1,
+                "max_val": 110,
+                "unit": "years",
+                "outside_min": "0",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "sbp": {
+            "original_name": "收缩压",
+            "type_conversion_successful": true,
+            "nan_count_before": "0",
+            "range_check": {
+                "min_val": 60,
+                "max_val": 300,
+                "unit": "mmHg",
+                "outside_min": "0",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "dbp": {
+            "original_name": "舒张压",
+            "type_conversion_successful": true,
+            "nan_count_before": "0",
+            "range_check": {
+                "min_val": 30,
+                "max_val": 200,
+                "unit": "mmHg",
+                "outside_min": "0",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "其他信息（相关既往病史，没有可直接跳过）": {
+            "original_name": "其他信息（相关既往病史，没有可直接跳过）",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "139",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "备注信息": {
+            "original_name": "备注信息",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "113",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "入组受试者的诊断状态": {
+            "original_name": "入组受试者的诊断状态",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "217",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "手表佩戴手": {
+            "original_name": "手表佩戴手",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "10",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "pwv": {
+            "original_name": "竞品信息-脉搏波传导速度",
+            "type_conversion_successful": true,
+            "nan_count_before": "1",
+            "range_check": {
+                "min_val": 3,
+                "max_val": 25,
+                "unit": "m/s",
+                "outside_min": "0",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "hrv_index": {
+            "original_name": "竞品信息-心率变异性",
+            "type_conversion_successful": true,
+            "nan_count_before": "1",
+            "range_check": {
+                "min_val": 0,
+                "max_val": 200,
+                "unit": "",
+                "outside_min": "0",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "竞品信息-动脉弹性评级": {
+            "original_name": "竞品信息-动脉弹性评级",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "2",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "小米-手表采集记录": {
+            "original_name": "小米-手表采集记录",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "0",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "cfpwv_carotid_si": {
+            "original_name": "cfPWV-颈动脉-SI ",
+            "type_conversion_successful": true,
+            "nan_count_before": "91",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "cfpwv_carotid_ri": {
+            "original_name": "cfPWV-颈动脉-RI ",
+            "type_conversion_successful": true,
+            "nan_count_before": "93",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "cfPWV-颈动脉-DAIX ": {
+            "original_name": "cfPWV-颈动脉-DAIX ",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "89",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "cfpwv_speed": {
+            "original_name": "cfPWV-速度m/s",
+            "type_conversion_successful": true,
+            "nan_count_before": "16",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "cfpwv_interval_ms": {
+            "original_name": "cfPWV-时间间隔ms",
+            "type_conversion_successful": true,
+            "nan_count_before": "17",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "cfpwv_distance_cm": {
+            "original_name": "cfPWV-距离cm",
+            "type_conversion_successful": true,
+            "nan_count_before": "17",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "cfPWV-股动脉-SI ": {
+            "original_name": "cfPWV-股动脉-SI ",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "46",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "cfPWV-股动脉-RI": {
+            "original_name": "cfPWV-股动脉-RI",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "58",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "cfPWV-股动脉-DAIX ": {
+            "original_name": "cfPWV-股动脉-DAIX ",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "46",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "bapwv_right_distance_cm": {
+            "original_name": "baPWV-右侧-距离cm",
+            "type_conversion_successful": true,
+            "nan_count_before": "9",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "baPWV-右侧-时间间隔ms": {
+            "original_name": "baPWV-右侧-时间间隔ms",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "10",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "bapwv_right_speed": {
+            "original_name": "baPWV-右侧-速度m/s",
+            "type_conversion_successful": true,
+            "nan_count_before": "9",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "baPWV-左侧-距离cm": {
+            "original_name": "baPWV-左侧-距离cm",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "9",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "bapwv_left_interval_ms": {
+            "original_name": "baPWV-左侧-时间间隔ms",
+            "type_conversion_successful": true,
+            "nan_count_before": "11",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "bapwv_left_speed": {
+            "original_name": "baPWV-左侧-速度m/s",
+            "type_conversion_successful": true,
+            "nan_count_before": "10",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "ABI-右侧-肱血压": {
+            "original_name": "ABI-右侧-肱血压",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "18",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "abi_right_brachial_index": {
+            "original_name": "ABI-右侧-肱指数",
+            "type_conversion_successful": true,
+            "nan_count_before": "18",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "ABI-右侧-足背血压": {
+            "original_name": "ABI-右侧-足背血压",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "17",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "ABI-右侧-足背指数": {
+            "original_name": "ABI-右侧-足背指数",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "17",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "ABI-右侧-胫后血压": {
+            "original_name": "ABI-右侧-胫后血压",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "13",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "abi_right_pt_index": {
+            "original_name": "ABI-右侧-胫后指数",
+            "type_conversion_successful": true,
+            "nan_count_before": "13",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "ABI-左侧-肱血压": {
+            "original_name": "ABI-左侧-肱血压",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "11",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "ABI-左侧-肱指数": {
+            "original_name": "ABI-左侧-肱指数",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "12",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "ABI-左侧-足背血压": {
+            "original_name": "ABI-左侧-足背血压",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "17",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "ABI-左侧-足背指数": {
+            "original_name": "ABI-左侧-足背指数",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "17",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "ABI-左侧-胫后血压": {
+            "original_name": "ABI-左侧-胫后血压",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "12",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "ABI-左侧-胫后指数": {
+            "original_name": "ABI-左侧-胫后指数",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "12",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "血流速度-颈部-最高速度m/s": {
+            "original_name": "血流速度-颈部-最高速度m/s",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "55",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "血流速度-颈部-最低速度m/s": {
+            "original_name": "血流速度-颈部-最低速度m/s",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "56",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "bfv_carotid_mean_speed": {
+            "original_name": "血流速度-颈部-平均速度m/s",
+            "type_conversion_successful": true,
+            "nan_count_before": "57",
+            "range_check": {
+                "checked": false,
+                "reason": "无预设范围"
+            }
+        },
+        "血流速度-腕部-最高速度m/s": {
+            "original_name": "血流速度-腕部-最高速度m/s",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "25",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "血流速度-腕部-最低速度m/s": {
+            "original_name": "血流速度-腕部-最低速度m/s",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "25",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "血流速度-腕部-平均速度m/s": {
+            "original_name": "血流速度-腕部-平均速度m/s",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "25",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "住院号": {
+            "original_name": "住院号",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "性别": {
+            "original_name": "性别",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "既往病史": {
+            "original_name": "既往病史",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "药物治疗": {
+            "original_name": "药物治疗",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "133",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "血管相关疾病": {
+            "original_name": "血管相关疾病",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "crp_mg_l": {
+            "original_name": "CRP（mg/L）",
+            "type_conversion_successful": true,
+            "nan_count_before": "132",
+            "range_check": {
+                "min_val": 0,
+                "max_val": 300,
+                "unit": "mg/L",
+                "outside_min": "0",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "PCT（ng/ml）": {
+            "original_name": "PCT（ng/ml）",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "TnI（pg/ml）": {
+            "original_name": "TnI（pg/ml）",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "CK-MB（ng/ml）": {
+            "original_name": "CK-MB（ng/ml）",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "肌红蛋白（ng/ml）": {
+            "original_name": "肌红蛋白（ng/ml）",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "bnp_pg_ml": {
+            "original_name": "BNP（pg/ml）",
+            "type_conversion_successful": true,
+            "nan_count_before": "132",
+            "range_check": {
+                "min_val": 0,
+                "max_val": 5000,
+                "unit": "pg/ml",
+                "outside_min": "0",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "creatinine_umol_l": {
+            "original_name": "肌酐（umol/L）",
+            "type_conversion_successful": true,
+            "nan_count_before": "132",
+            "range_check": {
+                "min_val": 20,
+                "max_val": 1000,
+                "unit": "umol/L",
+                "outside_min": "2",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "urea_mmol_l": {
+            "original_name": "尿素（mmol/L）",
+            "type_conversion_successful": true,
+            "nan_count_before": "132",
+            "range_check": {
+                "min_val": 1,
+                "max_val": 50,
+                "unit": "mmol/L",
+                "outside_min": "2",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "wbc_10_9": {
+            "original_name": "WBC(10^9)",
+            "type_conversion_successful": true,
+            "nan_count_before": "132",
+            "range_check": {
+                "min_val": 1,
+                "max_val": 50,
+                "unit": "10^9/L",
+                "outside_min": "2",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "RBC(10^9)": {
+            "original_name": "RBC(10^9)",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "hb_g_l": {
+            "original_name": "Hb（g/L）",
+            "type_conversion_successful": true,
+            "nan_count_before": "132",
+            "range_check": {
+                "min_val": 50,
+                "max_val": 250,
+                "unit": "g/L",
+                "outside_min": "6",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "PLT(10^9)": {
+            "original_name": "PLT(10^9)",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "PT": {
+            "original_name": "PT",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "APTT": {
+            "original_name": "APTT",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "D-dimer": {
+            "original_name": "D-dimer",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "ef_percent": {
+            "original_name": "射血分数（%）",
+            "type_conversion_successful": true,
+            "nan_count_before": "132",
+            "range_check": {
+                "min_val": 10,
+                "max_val": 90,
+                "unit": "%",
+                "outside_min": "37",
+                "outside_max": "0",
+                "checked": true
+            }
+        },
+        "颈动脉超声": {
+            "original_name": "颈动脉超声",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "肾动脉超声": {
+            "original_name": "肾动脉超声",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "下肢血管超声": {
+            "original_name": "下肢血管超声",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "132",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        },
+        "其他": {
+            "original_name": "其他",
+            "type_conversion_successful": "不适用",
+            "nan_count_before": "222",
+            "range_check": {
+                "checked": false,
+                "reason": "非目标数值列"
+            }
+        }
+    },
+    "gender_mapping": {
+        "mapped_male": "104",
+        "mapped_female": "118",
+        "nan_before_gender_mapping": "0",
+        "nan_after_gender_mapping": "0"
+    },
+    "missing_values": {
+        "imputation_details": {
+            "cfpwv_speed": {
+                "num_missing_filled": "15",
+                "median_value": 9.25
+            },
+            "bapwv_right_speed": {
+                "num_missing_filled": "8",
+                "median_value": 11.1
+            },
+            "bapwv_left_speed": {
+                "num_missing_filled": "9",
+                "median_value": 11.3
+            },
+            "cfpwv_carotid_si": {
+                "num_missing_filled": "90",
+                "median_value": 9.62
+            },
+            "cfpwv_carotid_ri": {
+                "num_missing_filled": "92",
+                "median_value": 0.42
+            },
+            "creatinine_umol_l": {
+                "num_missing_filled": "131",
+                "median_value": 68.5
+            },
+            "urea_mmol_l": {
+                "num_missing_filled": "132",
+                "median_value": 5.3
+            },
+            "crp_mg_l": {
+                "num_missing_filled": "131",
+                "median_value": 0.4
+            },
+            "ef_percent": {
+                "num_missing_filled": "131",
+                "median_value": 60.25
+            },
+            "abi_right_pt_index": {
+                "num_missing_filled": "13",
+                "median_value": 1.09
+            },
+            "cfpwv_interval_ms": {
+                "num_missing_filled": "16",
+                "median_value": 78.0
+            },
+            "cfpwv_distance_cm": {
+                "num_missing_filled": "16",
+                "median_value": 72.0
+            },
+            "bapwv_right_distance_cm": {
+                "num_missing_filled": "8",
+                "median_value": 110.0
+            },
+            "bapwv_left_interval_ms": {
+                "num_missing_filled": "10",
+                "median_value": 90.0
+            },
+            "abi_right_brachial_index": {
+                "num_missing_filled": "18",
+                "median_value": 1.0
+            },
+            "bfv_carotid_mean_speed": {
+                "num_missing_filled": "56",
+                "median_value": 13.1
+            },
+            "bnp_pg_ml": {
+                "num_missing_filled": "131",
+                "median_value": 26.5
+            },
+            "wbc_10_9": {
+                "num_missing_filled": "131",
+                "median_value": 5.6
+            },
+            "hb_g_l": {
+                "num_missing_filled": "131",
+                "median_value": 131.5
+            },
+            "cfPWV-颈动脉-DAIX ": {
+                "num_missing_filled": "88",
+                "median_value": 0.57,
+                "is_pwv_related_extra": true
+            },
+            "cfPWV-股动脉-SI ": {
+                "num_missing_filled": "45",
+                "median_value": 5.325,
+                "is_pwv_related_extra": true
+            },
+            "cfPWV-股动脉-RI": {
+                "num_missing_filled": "57",
+                "median_value": 0.02,
+                "is_pwv_related_extra": true
+            },
+            "cfPWV-股动脉-DAIX ": {
+                "num_missing_filled": "45",
+                "median_value": 0.99,
+                "is_pwv_related_extra": true
+            },
+            "baPWV-右侧-时间间隔ms": {
+                "num_missing_filled": "9",
+                "median_value": 92.0,
+                "is_pwv_related_extra": true
+            },
+            "baPWV-左侧-距离cm": {
+                "num_missing_filled": "8",
+                "median_value": 110.0,
+                "is_pwv_related_extra": true
+            }
+        },
+        "total_nans_before": "4826",
+        "pwv_dropna_rows_removed": 1,
+        "total_nans_after": "3257"
+    },
+    "gender_standardization": {
+        "unmapped_values_found": [],
+        "final_distribution_str": "gender\n0    117\n1    104\nName: count, dtype: int64"
+    },
+    "feature_creation_bmi": {
+        "initial_mean_bmi": 24.83684104033066,
+        "low_threshold": 10,
+        "high_threshold": 50,
+        "num_outliers_found": "0",
+        "status": "created"
+    },
+    "bp_outlier_handling": {
+        "sbp": {
+            "plausible_min": 50,
+            "plausible_max": 300,
+            "num_outside_plausible": "0",
+            "specific_low": 80,
+            "specific_high": 200,
+            "num_specific_outliers_nan": "1",
+            "num_nans_before_final_fill": "1",
+            "median_filled_value": 128.0,
+            "num_nans_filled": "1"
+        },
+        "dbp": {
+            "plausible_min": 30,
+            "plausible_max": 200,
+            "num_outside_plausible": "0",
+            "specific_low": 40,
+            "specific_high": 120,
+            "num_specific_outliers_nan": "0",
+            "num_nans_before_final_fill": "0",
+            "num_nans_filled": 0
+        }
+    },
+    "pwv_range_check": {
+        "min_val": 2,
+        "max_val": 30,
+        "num_outside_range": "0"
+    },
+    "derived_features": {
+        "pulse_pressure": {
+            "status": "created",
+            "mean_value": 50.959276018099544
+        }
+    },
+    "pwv_specific_range_check_summary": {
+        "min_val": 3,
+        "max_val": 25,
+        "unit": "m/s",
+        "outside_min": "0",
+        "outside_max": "0",
+        "checked": true
+    },
+    "all_nan_cols_dropped": {
+        "count": 1,
+        "columns": [
+            "其他"
+        ]
+    },
+    "final_rows": 221,
+    "final_cols": 78,
+    "retention_percentage": 100.0
+}

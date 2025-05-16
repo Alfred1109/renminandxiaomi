@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: pwv_analysis
+Version: 2.0.0
+Summary: PWV数据分析工具 - 基于小米可穿戴设备进行动脉硬化筛查与脑卒中风险预测研究
+Author: 人民医院小米项目组
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.7
+Requires-Dist: numpy>=1.20.0
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: matplotlib>=3.4.0
+Requires-Dist: seaborn>=0.11.0
+Requires-Dist: scipy>=1.7.0
+Requires-Dist: scikit-learn>=0.24.0
+Requires-Dist: statsmodels>=0.12.0
+Requires-Dist: openpyxl>=3.0.0
+Requires-Dist: python-docx>=0.8.0
+Requires-Dist: markdown>=3.0.0
+Requires-Dist: xgboost>=1.4.0
+Requires-Dist: plotly>=5.0.0
+Requires-Dist: kaleido>=0.2.0
+Dynamic: author
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

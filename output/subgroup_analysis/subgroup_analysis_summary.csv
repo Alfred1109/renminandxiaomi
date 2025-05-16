@@ -1,0 +1,10 @@
+﻿Target,Group,TestUsed,P_Value,TestSummary
+cfPWV-速度m/s,年龄组,Kruskal-Wallis test,1.747497631904917e-16,"H-statistic=79.993, P-value=0.000"
+cfPWV-速度m/s,性别,One-way ANOVA,0.7824564323805925,"F-statistic=0.246, P-value=0.782"
+cfPWV-速度m/s,BMI_组,Kruskal-Wallis test,0.4582396599745471,"H-statistic=2.596, P-value=0.458"
+baPWV-平均速度m/s,年龄组,Kruskal-Wallis test,9.274779476360422e-14,"H-statistic=67.103, P-value=0.000"
+baPWV-平均速度m/s,性别,Kruskal-Wallis test,0.10713414824013416,"H-statistic=4.467, P-value=0.107"
+baPWV-平均速度m/s,BMI_组,Kruskal-Wallis test,0.23554454802327027,"H-statistic=4.252, P-value=0.236"
+ABI_Overall,年龄组,Kruskal-Wallis test,0.06223196500197514,"H-statistic=8.955, P-value=0.062"
+ABI_Overall,性别,Kruskal-Wallis test,0.4228716449420806,"H-statistic=1.721, P-value=0.423"
+ABI_Overall,BMI_组,Kruskal-Wallis test,0.575177996511018,"H-statistic=1.987, P-value=0.575"

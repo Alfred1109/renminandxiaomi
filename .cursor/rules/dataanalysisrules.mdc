@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+## 目录结构
+pwv_analysis/                    # 项目根目录
+├── docs/                        # 项目文档目录
+│   ├── excel/                   # 存放原始Excel数据文件
+│   ├── markdown/                # Markdown格式文档
+│   ├── pdf/                     # PDF格式文档
+│   ├── word/                    # Word格式文档
+├── metadata/                    # 元数据文件目录
+├── output/                      # 输出文件目录
+│   ├── figures/                 # 图表输出目录
+│   ├── image/                   # 图像输出目录
+│   ├── reports/                 # 生成的报告目录
+│   └── tables/                  # 生成的数据表目录
+├── scripts/                     # 项目核心脚本目录
+├── venv/                        # Python虚拟环境目录
+├── install.bat                  # Windows安装脚本
+├── install.sh                   # Linux/macOS安装脚本
+├── README.md                    # 项目说明文档
+└── setup.py                     # 安装配置文件
+
