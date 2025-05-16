@@ -460,59 +460,56 @@ def visualize_shap_values(explainer, shap_values, X_sample, output_dir="output/i
         # 3. SHAP瀑布图 (Waterfall Plot for one sample)
         if shap_values_sample_for_plot is not None and current_base_value_for_sample is not None:
             try:
-                # Create an Explanation object for the single sample if not already
-                # Some SHAP versions/explainers might not directly provide shap_values_sample like this
-                # So, constructing an Explanation object is safer for waterfall plot
-                if hasattr(current_shap_values, 'base_values') and hasattr(current_shap_values, 'data'): # if current_shap_values is already an Explanation
-                    explanation_for_waterfall = shap.Explanation(
-                        values=shap_values_sample_for_plot,
-                        base_values=current_base_value_for_sample, # Ensure this matches the sample's base value
-                        data=X_sample_df.iloc[sample_idx].values, # Data for this specific sample
-                        feature_names=X_sample_df.columns.tolist()
-                    )
-                else: # Construct from raw values
-                     explanation_for_waterfall = shap.Explanation(
-                        values=shap_values_sample_for_plot,
-                        base_values=current_base_value_for_sample,
-                        data=X_sample_df.iloc[sample_idx].values,
-                        feature_names=X_sample_df.columns.tolist()
-                    )
+                # Create an Explanation object for the single sample
+                explanation_for_waterfall = shap.Explanation(
+                    values=shap_values_sample_for_plot,
+                    base_values=current_base_value_for_sample,
+                    data=X_sample_df.iloc[sample_idx].values,
+                    feature_names=X_sample_df.columns.tolist()
+                )
 
-                plt.figure(figsize=(14, 8)) 
-                with plt.rc_context({'font.family': 'sans-serif', 'font.sans-serif': ['SimHei', 'DejaVu Sans']}):
-                    shap.waterfall_plot(
-                        explanation_for_waterfall,
-                        max_display=20,
-                        show=False
-                    )
+                # Store original rcParams for font.sans-serif
+                original_rc_font_sans_serif = plt.rcParams['font.sans-serif']
+                # Ensure CHINESE_FONT_PROP.get_name() is valid, fallback to 'SimHei' string if needed
+                chinese_font_name_to_use = 'SimHei' # Default
+                if CHINESE_FONT_PROP and hasattr(CHINESE_FONT_PROP, 'get_name'):
+                    font_name_from_prop = CHINESE_FONT_PROP.get_name()
+                    if font_name_from_prop: # Ensure it's not empty or None
+                        chinese_font_name_to_use = font_name_from_prop
+                
+                plt.rcParams['font.sans-serif'] = [chinese_font_name_to_use] + original_rc_font_sans_serif # Prioritize, but keep fallbacks
+
+                plt.figure(figsize=(14, 8))
+                # The plt.rc_context might be redundant if we set rcParams directly, but can be kept for safety.
+                # It's often better to manage rcParams directly for such specific overrides.
+                # We'll rely on the direct rcParams override for this plot.
+                
+                shap.waterfall_plot(
+                    explanation_for_waterfall,
+                    max_display=20,
+                    show=False
+                )
                 
                 current_ax = plt.gca()
-                print("---- Debugging SHAP Waterfall Plot Texts ----")
+                print("---- Debugging SHAP Waterfall Plot Texts (Post rcParam Override) ----")
                 if CHINESE_FONT_PROP and current_ax:
-                    print(f"Attempting to apply font: {CHINESE_FONT_PROP.get_name()}")
+                    print(f"Attempting to apply font using CHINESE_FONT_PROP: {chinese_font_name_to_use}")
+                    # Apply to general axis elements (title, labels)
+                    current_ax.set_title(current_ax.get_title(), fontproperties=CHINESE_FONT_PROP)
+                    current_ax.set_xlabel(current_ax.get_xlabel(), fontproperties=CHINESE_FONT_PROP)
+                    current_ax.set_ylabel(current_ax.get_ylabel(), fontproperties=CHINESE_FONT_PROP) # Y-axis is feature names
+
+                    for label in current_ax.get_xticklabels():
+                        label.set_fontproperties(CHINESE_FONT_PROP)
+                    for label in current_ax.get_yticklabels(): # These are the feature names on the y-axis
+                        label.set_fontproperties(CHINESE_FONT_PROP)
+                        print(f"  YTickLabel '{label.get_text()}': Font set to {label.get_fontproperties().get_name()}")
+
+                    # Iterate over all text artists on the axes
                     for i, text_obj in enumerate(current_ax.texts):
                         original_font_name = text_obj.get_fontproperties().get_name()
                         text_obj.set_fontproperties(CHINESE_FONT_PROP)
                         print(f"  Text {i}: '{text_obj.get_text()[:30]}' - Original Font: {original_font_name}, New Font: {text_obj.get_fontproperties().get_name()}")
-                    
-                    if current_ax.get_title():
-                        current_ax.set_title(current_ax.get_title(), fontproperties=CHINESE_FONT_PROP)
-                        print(f"  Title: Original Font: N/A, New Font: {CHINESE_FONT_PROP.get_name()}")
-                    if current_ax.get_xlabel():
-                        current_ax.set_xlabel(current_ax.get_xlabel(), fontproperties=CHINESE_FONT_PROP)
-                        print(f"  XLabel: Original Font: N/A, New Font: {CHINESE_FONT_PROP.get_name()}")
-                    if current_ax.get_ylabel():
-                        current_ax.set_ylabel(current_ax.get_ylabel(), fontproperties=CHINESE_FONT_PROP)
-                        print(f"  YLabel: Original Font: N/A, New Font: {CHINESE_FONT_PROP.get_name()}")
-
-                    for i, label in enumerate(current_ax.get_xticklabels()):
-                        original_font_name = label.get_fontproperties().get_name()
-                        label.set_fontproperties(CHINESE_FONT_PROP)
-                        print(f"  XTickLabel {i}: '{label.get_text()}' - Original Font: {original_font_name}, New Font: {label.get_fontproperties().get_name()}")
-                    for i, label in enumerate(current_ax.get_yticklabels()):
-                        original_font_name = label.get_fontproperties().get_name()
-                        label.set_fontproperties(CHINESE_FONT_PROP)
-                        print(f"  YTickLabel {i}: '{label.get_text()}' - Original Font: {original_font_name}, New Font: {label.get_fontproperties().get_name()}")
                 print("---- End Debugging SHAP Waterfall Plot Texts ----")
 
                 plt.tight_layout()
@@ -521,10 +518,14 @@ def visualize_shap_values(explainer, shap_values, X_sample, output_dir="output/i
                 plt.close()
                 output_files.append(waterfall_path)
                 print(f"SHAP瀑布图已保存: {waterfall_path}")
+
             except Exception as e:
                 print(f"错误: 生成SHAP瀑布图失败: {e}")
                 import traceback
                 traceback.print_exc()
+            finally:
+                # Restore original rcParams
+                plt.rcParams['font.sans-serif'] = original_rc_font_sans_serif
 
         # 4. SHAP依赖图 (Dependence Plot for top features)
         # current_shap_values should be for the selected class in multiclass or the only class for binary/regression
