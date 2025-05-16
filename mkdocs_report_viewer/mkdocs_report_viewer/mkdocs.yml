@@ -1,0 +1,65 @@
+site_name: PWV与心脑血管风险研究项目
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切换到暗模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换到亮模式
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# 页面导航
+nav:
+  - 首页: 'index.md'
+  - 深度研究报告: 'Comprehensive_Analysis_Deep_Dive_Report.md'
+  - 数据资源:
+    - 核心分析结果: 'output/tables/PWV_Core_Analysis_Results.xlsx'
+    - 高级分析结果: 'output/tables/PWV_Advanced_Analysis_Results.xlsx'
+    - 风险预测模型结果: 'output/tables/PWV_Risk_Predictions.xlsx'
+  - 图表资源:
+    - 分布图表: 
+      - 年龄分布: 'output/figures/distribution/distribution_age.png'
+      - PWV分布: 'output/figures/distribution/distribution_pwv.png'
+      - 收缩压分布: 'output/figures/distribution/distribution_sbp.png'
+    - 相关性分析: 
+      - 相关性热图: 'output/figures/correlation/correlation_heatmap.png'
+    - 回归分析:
+      - PWV与年龄: 'output/figures/regression/pwv_age_regression.png'
+      - PWV与收缩压: 'output/figures/regression/pwv_sbp_regression.png'
+    - 风险预测:
+      - PWV超标风险ROC曲线: 'output/image/风险预测/PWV超标风险/PWV超标风险_roc_curve.png'
+      - SHAP特征重要性: 'output/image/风险预测/PWV超标风险/PWV超标风险_shap_summary_bar.png'
+
+# 页脚版权信息
+copyright: PWV与心脑血管风险研究项目 &copy; 2025 

@@ -679,7 +679,7 @@ def plot_boxplots(df, save_dir='output/image'):
     
     return figure_files
 
-def plot_correlation_heatmap(df, save_dir='output/image'):
+def plot_correlation_heatmap(df, save_dir='output/figures/correlation'):
     """
     绘制相关性热力图
     
@@ -695,17 +695,13 @@ def plot_correlation_heatmap(df, save_dir='output/image'):
     # 确保目录存在
     os.makedirs(save_dir, exist_ok=True)
     
-    # 选择数值列进行相关性分析
+    # 选择数值列进行相关性分析 - 减少列数，只保留最关键的指标
     numeric_cols = [
         'pwv', 'age', 'sbp', 'dbp', 'bmi', 'height', 'weight',
         'cfpwv_speed', 'bapwv_right_speed', 'bapwv_left_speed',
-        'cfpwv_carotid_si', 'cfpwv_carotid_ri', 'hrv_index',
+        'hrv_index', 'abi_right_pt_index',
         'creatinine_umol_l', 'urea_mmol_l', 'crp_mg_l', 
-        'ef_percent', 'abi_right_pt_index',
-        'cfpwv_carotid_daix', 'cfpwv_interval_ms', 'cfpwv_distance_cm',
-        'bapwv_right_distance_cm', 'bapwv_left_interval_ms',
-        'abi_right_brachial_index', 'bfv_carotid_mean_speed',
-        'bnp_pg_ml', 'wbc_10_9', 'hb_g_l'
+        'ef_percent'
     ]
     available_cols = [col for col in numeric_cols if col in df.columns]
     
@@ -719,8 +715,8 @@ def plot_correlation_heatmap(df, save_dir='output/image'):
     # 计算相关系数矩阵
     corr_matrix = df[available_cols].corr()
     
-    # 绘制热力图
-    fig, ax = plt.subplots(figsize=(10, 8))
+    # 绘制热力图 - 增加图表尺寸
+    fig, ax = plt.subplots(figsize=(14, 12))
     mask = np.triu(np.ones_like(corr_matrix, dtype=bool))
     cmap = sns.diverging_palette(230, 20, as_cmap=True)
     
@@ -735,21 +731,26 @@ def plot_correlation_heatmap(df, save_dir='output/image'):
         linewidths=.5,
         annot=True,
         fmt='.2f',
+        annot_kws={"size": 10},  # 增加标注字体大小
         cbar_kws={"shrink": .8},
         ax=ax
     )
     
-    ax.set_title('相关性热力图', fontsize=16)
+    ax.set_title('相关性热力图', fontsize=18)
     
     # 应用字体到坐标轴
     apply_font_to_axis(ax)
     
+    # 增加坐标轴标签字体大小
+    ax.tick_params(axis='both', which='major', labelsize=11)
+    
     # 获取colorbar对象并设置标签
     cbar = heatmap_ax.collections[0].colorbar
-    cbar.set_label("相关系数", fontproperties=(CHINESE_FONT_PROP if CHINESE_FONT_PROP else None))
+    cbar.set_label("相关系数", fontproperties=(CHINESE_FONT_PROP if CHINESE_FONT_PROP else None), fontsize=12)
     if CHINESE_FONT_PROP:
         for t_label in cbar.ax.get_yticklabels():
             t_label.set_fontproperties(CHINESE_FONT_PROP)
+            t_label.set_fontsize(10)
 
     # 添加热力图说明文本
     correlation_explanation = (
@@ -785,8 +786,8 @@ def plot_correlation_heatmap(df, save_dir='output/image'):
     figure_files.append(file_name)
     print(f"  已保存: {file_name}")
     
-    # 绘制聚类热力图
-    plt.figure(figsize=(12, 10))
+    # 绘制聚类热力图 - 增加图表尺寸
+    plt.figure(figsize=(16, 14))
     cluster_map = sns.clustermap(
         corr_matrix,
         cmap=cmap,
@@ -797,30 +798,34 @@ def plot_correlation_heatmap(df, save_dir='output/image'):
         linewidths=.5,
         annot=True,
         fmt='.2f',
-        cbar_kws={"shrink": .8}
+        annot_kws={"size": 10},  # 增加标注字体大小
+        cbar_kws={"shrink": .8},
+        figsize=(16, 14)  # 确保figsize参数正确应用
     )
+    
+    # 增加坐标轴标签字体大小
+    cluster_map.ax_heatmap.tick_params(axis='both', which='major', labelsize=11)
     
     # Attempt to apply font to clustermap's heatmap axes if possible
     apply_font_to_axis(cluster_map.ax_heatmap)
     if CHINESE_FONT_PROP:
-        # Clustermap has its own figure, apply to its title if it exists
-        # cluster_map.fig.suptitle("聚类热力图", fontproperties=CHINESE_FONT_PROP)
         # Setting title directly on ax_heatmap is usually better
-        cluster_map.ax_heatmap.set_title("聚类热力图", fontproperties=CHINESE_FONT_PROP if CHINESE_FONT_PROP else None)
+        cluster_map.ax_heatmap.set_title("聚类热力图", fontproperties=CHINESE_FONT_PROP if CHINESE_FONT_PROP else None, fontsize=18)
 
         # Attempt to set colorbar label for clustermap
         if hasattr(cluster_map, 'cax'):
             try:
-                cluster_map.cax.set_ylabel("相关系数", fontproperties=CHINESE_FONT_PROP)
+                cluster_map.cax.set_ylabel("相关系数", fontproperties=CHINESE_FONT_PROP, fontsize=12)
                 for t_label in cluster_map.cax.get_yticklabels():
                     t_label.set_fontproperties(CHINESE_FONT_PROP)
+                    t_label.set_fontsize(10)
             except Exception as e:
                 logger.warning(f"Failed to set font for clustermap colorbar: {e}")
 
     # 保存图形
     file_name = 'correlation_clustermap.png'
     file_path = os.path.join(save_dir, file_name)
-    plt.savefig(file_path)
+    plt.savefig(file_path, dpi=150)
     plt.close()
     
     figure_files.append(file_name)
